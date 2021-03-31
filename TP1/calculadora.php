@@ -1,33 +1,43 @@
 <?php
 
 class Calculadora{
-    public function resta($n1,$n2){
-        $resta = $n1 - $n2;
+    private $n1;
+    private $n2;
+    
+    public function __construct($num1,$num2){
+        $this->n1 = $num1;
+        $this->n2 = $num2;
+    }
+
+    public function resta(){
+        $resta = $this->n1 - $this->n2;
         return $resta;
     }
-    public function suma($n1,$n2){
-        $suma = $n1 + $n2;
+    public function suma(){
+        $suma = $this->n1 + $this->n2;
         return $suma;
     }
-    public function producto($n1,$n2){
-        $producto = $n1 * $n2;
+    public function producto(){
+        $producto = $this->n1 * $this->n2;
         return $producto;
     }
-    public function division($n1,$n2){
-        $division = $n1 / $n2;
+    public function division(){
+        $division = $this->n1 / $this->n2;
         return $division;
+    }
+
+    public function __toString(){
+        
     }
 }
 
-$calc = new Calculadora();
-$num1 = 10;
-$num2 = 5;
-$res1 = $calc->suma($num1,$num2);
-$res2 = $calc->resta($num1,$num2);
-$res3 = $calc->producto($num1,$num2);
-$res4 = $calc->division($num1,$num2);
+$calc = new Calculadora(10,5);
+$res1 = $calc->suma();
+$res2 = $calc->resta();
+$res3 = $calc->producto();
+$res4 = $calc->division();
 
-echo "Suma: ".$res1."\n Resta:".$res2."\n Multiplicacion:".$res3."\n Division:".$res4."\n";
+echo " Suma: ".$res1."\n Resta: ".$res2."\n Multiplicacion: ".$res3."\n Division: ".$res4."\n";
 
 
 ?>
