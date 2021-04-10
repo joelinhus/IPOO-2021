@@ -5,11 +5,20 @@ class Teatro{
     private $direccion;
     private $funcionesdehoy = [];
 
-    public function __construct($n,$d){
+    public function __construct($n,$d,$fdh){
         $this->nombre = $n;
         $this->direccion = $d;
+		$this->funcionesdehoy = $fdh;
     }
 
+	public function __toString(){
+		return  "||  Teatro ".$this->nombre." \n||  Direccion ".$this->direccion." \n";
+	}
+
+	public function modificarXFuncion($r,$n,$p){
+		$this->funcionesdehoy[$r]['nombre'] = $n;
+		$this->funcionesdehoy[$r]['precio'] = $p;
+	}
 
 	public function getNombreFuncion($i) { 
         return $this->funcionesdehoy[$i]['nombre']; 

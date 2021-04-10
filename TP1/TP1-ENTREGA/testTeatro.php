@@ -2,19 +2,16 @@
 
     include_once "entrega.php";
 
-    $t = new Teatro("Village","Don Bosco 545");
-
-    $t->setNombreFuncion(0,"Los Increibles");
-    $t->setPrecio(0,400);
-    $t->setNombreFuncion(1,"Spiderman 2");
-    $t->setPrecio(1,800);
-    $t->setNombreFuncion(2,"Toy Story");
-    $t->setPrecio(2,1000);
-    $t->setNombreFuncion(3,"Bugs");
-    $t->setPrecio(3,200);
+    $funciones = array();
+        $funciones[0] = array("nombre"=>"Los Increibles","precio"=>400);
+        $funciones[1] = array("nombre"=>"Spiderman 2","precio"=>800);
+        $funciones[2] = array("nombre"=>"Toy Story","precio"=>1000);
+        $funciones[3] = array("nombre"=>"Bugs","precio"=>200);
     
-    echo "||  Teatro ".$t->getNombre()." \n";
-    echo "||  ".$t->getDireccion()." \n";
+        
+    $t = new Teatro("Village","Don Bosco 545",$funciones);
+    
+    echo $t;
 
     do {
 
@@ -38,8 +35,7 @@
 
         switch ($opcion) {
             case 1: //Mostrar datos del Teatro
-                echo "||  Teatro ".$t->getNombre()." \n";
-                echo "||  Direccion ".$t->getDireccion()." \n";
+                    echo $t;
                 break;
             case 2: //modificar nombre del teatro
                 echo "||  Ingrese el nuevo nombre del teatro: \n";
@@ -76,8 +72,7 @@
                 echo "\n||  Ingrese el nuevo precio de la funcion: \n";
                 $np = trim(fgets(STDIN));
 
-                $t->setNombreFuncion($resp,$nnf);
-                $t->setPrecio($resp,$np);
+                $t->modificarXFuncion($resp,$nnf,$np);
 
                 echo "||  Función actualizada con éxito \n";
                 break;
