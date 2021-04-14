@@ -11,11 +11,13 @@ class Empresa{
     private $ventas=[];
 
     public function retornarVehiculo($codProducto){
+        $retorno;
         for($i=0;$i<count($this->productos);$i++){
             if($this->productos[$i]->getCodigo()==$codProducto){
-                return $this->productos[$i];
+                $retorno = $this->productos[$i];
             }
         }
+        return $retorno;
     }
 //flag es una variable bandera, que seria utilizada si esto tuviese una interfaz de usuario, para generar un bucle en el que pida codigos hasta que al menos 1
 //coincida con uno en la coleccion de productos de la empresa o un cliente que no este dado de baja
@@ -61,7 +63,7 @@ class Empresa{
             $retorno .= $this->clientes[$i]."\n";
         }
         for($i=0;$i<count($this->productos);$i++){
-            $retorno .= $this->productos[$i]."||  Venta: ".$this->productos[$i]->darPrecioVenta()."\n";
+            $retorno .= $this->productos[$i]."\n";
         }
         for($i=0;$i<count($this->ventas);$i++){
             $retorno .= $this->ventas[$i];

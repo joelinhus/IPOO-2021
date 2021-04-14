@@ -10,7 +10,7 @@ class Producto{
 
     public function __toString(){
         $retorno = 
-        "__\n||_____ PRODUCTO-n°$this->codigo _____||\n||  Costo: $this->costo\n||  Año de fabricación: $this->anioFabricacion\n||  Descripcion: $this->descripcion\n||  Porcentaje de incremento anual: $this->porcIncrementoAnual%\n||  ¿Está disponible para la venta?: ".($this->activo ? "Si" : "No")."\n";
+        "__\n||_____ PRODUCTO-n°$this->codigo _____||\n||  Costo: $this->costo\n||  Año de fabricación: $this->anioFabricacion\n||  Descripcion: $this->descripcion\n||  Porcentaje de incremento anual: $this->porcIncrementoAnual%\n||  ¿Está disponible para la venta?: ".($this->activo ? "Si" : "No")."\n|| Venta: ".$this->darPrecioVenta()."\n";
         return $retorno;
     }
 

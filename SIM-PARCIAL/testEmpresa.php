@@ -8,9 +8,9 @@ include_once("empresa.php");
     $objCliente1 = new Cliente("Joel","Jeckeln",false,"DNI","43338753");
     $objCliente2 = new Cliente("Noel","Jeckeln",false,"DNI","18554091");
 
-    $objProducto3 = new Producto(11,50000,2018,"Cemento Loma Negra",70,true);
-    $objProducto4 = new Producto(12,10000,2019,"Hierro del 12",60,true);
-    $objProducto5 = new Producto(13,10000,2020,"Cal Santa Clara",50,false);
+    $objProducto3 = new Producto(11,50000,2018,"Cemento Loma Negra",0.70,true);
+    $objProducto4 = new Producto(12,10000,2019,"Hierro del 12",0.60,true);
+    $objProducto5 = new Producto(13,10000,2020,"Cal Santa Clara",0.50,false);
 
     $objEmpresa9 = new Empresa("COSMOS","Av. Argentina 123",[$objCliente1,$objCliente2],[$objProducto3,$objProducto4,$objProducto5],[]);
     
@@ -30,7 +30,6 @@ include_once("empresa.php");
     }
 
     $ventasCliente2 = $objEmpresa9->retornarVentasXCliente("DNI",18554091);
-    echo "-----------------------------------------------\n";
     if($ventasCliente2==[]){
         echo "||  El cliente elegido no tiene ventas a su nombre. \n";
     }else{

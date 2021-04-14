@@ -20,7 +20,7 @@ class Venta{
         $retorno = "\n__\n||_____ VENTA-n°$this->numero _____||\n||  Fecha: $this->fecha $this->cliente";
         $count = 0;
         for($i=0;$i<count($this->productos);$i++){
-            $retorno .= $this->productos[$i]."||  Venta: ".$this->productos[$i]->darPrecioVenta()."\n";
+            $retorno .= $this->productos[$i]."\n";
         }
         //$retorno .= $this->productos[$i]."||  Venta: ".$this->productos[$i]->darPrecioVenta()."\n";
         $retorno .= "\n-------------------------------------\n||  Precio final: $this->precioFinal";
